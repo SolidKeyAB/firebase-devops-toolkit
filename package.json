@@ -1,0 +1,74 @@
+{
+  "name": "@solidkey/firebase-devops-toolkit",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Firebase DevOps toolkit - 80+ production-ready scripts for local development, deployment, and team collaboration",
+  "main": "manage.sh",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0",
+    "postinstall": "chmod +x *.sh local/*.sh remote/*.sh 2>/dev/null || true && echo \"Firebase DevOps Toolkit installed successfully!\""
+  },
+  "keywords": [
+    "firebase",
+    "emulator",
+    "microservices",
+    "deployment",
+    "devops",
+    "serverless",
+    "cloud-functions",
+    "firestore",
+    "pubsub",
+    "gcp",
+    "google-cloud",
+    "development-tools",
+    "cli"
+  ],
+  "author": "SolidKey AB <dev@solidkey.se>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SolidKeyAB/firebase-devops-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SolidKeyAB/firebase-devops-toolkit/issues"
+  },
+  "homepage": "https://github.com/SolidKeyAB/firebase-devops-toolkit#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "firebase-tools": ">=13.0.0"
+  },
+  "files": [
+    "*.sh",
+    "*.js",
+    "*.md",
+    "local/",
+    "remote/",
+    "examples/",
+    "docs/",
+    "templates/",
+    "lib/"
+  ],
+  "bin": {
+    "firebase-devops": "./manage.sh",
+    "fdt": "./manage.sh"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "http-proxy-middleware": "^2.0.6"
+  },
+  "devDependencies": {},
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/SolidKeyAB"
+  }
+}

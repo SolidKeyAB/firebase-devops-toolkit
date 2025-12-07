@@ -1,0 +1,12 @@
+public-api-service
+vector-search-service
+score-calculation-service
+category-extraction-service
+products-extraction-service
+orchestrator-service
+health-service
+sustainability-enrichment-service
+eprel-enrichment-service
+legal-compliance-service
+product-image-service
+ai-logging-service
