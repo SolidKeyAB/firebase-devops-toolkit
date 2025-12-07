@@ -3,7 +3,7 @@
 # =============================================================================
 # Project Orchestration Script
 # =============================================================================
-# Wrapper for @solidkey/firebase-devops-toolkit
+# Wrapper for @solidkeyab/firebase-devops-toolkit
 # Customize this for your project needs
 # =============================================================================
 
@@ -22,8 +22,8 @@ export FIREBASE_REGION="${FIREBASE_REGION:-us-central1}"
 # =============================================================================
 
 find_toolkit() {
-    # 1. npm package
-    local npm_path="$SERVICES_DIR/node_modules/@solidkey/firebase-devops-toolkit"
+    # 1. npm package (GitHub Packages)
+    local npm_path="$SERVICES_DIR/node_modules/@solidkeyab/firebase-devops-toolkit"
     [ -f "$npm_path/manage.sh" ] && echo "$npm_path" && return 0
 
     # 2. Environment variable
@@ -40,8 +40,12 @@ TOOLKIT=$(find_toolkit)
 if [ -z "$TOOLKIT" ]; then
     echo "ERROR: Firebase DevOps Toolkit not found!"
     echo ""
-    echo "Install it:"
-    echo "  cd services && npm install @solidkey/firebase-devops-toolkit"
+    echo "Install it via GitHub Packages:"
+    echo "  echo '@solidkeyab:registry=https://npm.pkg.github.com' >> .npmrc"
+    echo "  cd services && npm install @solidkeyab/firebase-devops-toolkit"
+    echo ""
+    echo "Or clone directly:"
+    echo "  git clone https://github.com/SolidKeyAB/firebase-devops-toolkit.git"
     echo ""
     exit 1
 fi

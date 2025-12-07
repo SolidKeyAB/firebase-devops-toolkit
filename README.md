@@ -2,7 +2,7 @@
 
 > **Enterprise-grade Firebase DevOps - Local to Production in Minutes**
 
-[![npm version](https://badge.fury.io/js/%40solidkey%2Ffirebase-devops-toolkit.svg)](https://www.npmjs.com/package/@solidkey/firebase-devops-toolkit)
+[![GitHub Package](https://img.shields.io/badge/npm-GitHub%20Packages-blue)](https://github.com/SolidKeyAB/firebase-devops-toolkit/packages)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -97,20 +97,28 @@ The starter template includes:
 - Pre-configured orchestrate.sh
 - Ready-to-use emulator config
 
-### Option B: Add to Existing Project
+### Option B: Add to Existing Project (via GitHub Packages)
 
 ```bash
-# Install via npm
+# Configure npm to use GitHub Packages for @solidkeyab scope
+echo "@solidkeyab:registry=https://npm.pkg.github.com" >> .npmrc
+
+# Install the toolkit
 cd your-project/services
-npm install @solidkey/firebase-devops-toolkit --save-dev
+npm install @solidkeyab/firebase-devops-toolkit --save-dev
 
 # Copy the orchestration script
-cp node_modules/@solidkey/firebase-devops-toolkit/templates/orchestrate.sh ../scripts/
+cp node_modules/@solidkeyab/firebase-devops-toolkit/templates/orchestrate.sh ../scripts/
 
 # Set your project ID and start
 export FIREBASE_PROJECT_ID="your-project-id"
 ./scripts/orchestrate.sh dev
 ```
+
+> **Note:** GitHub Packages requires authentication. Create a [Personal Access Token](https://github.com/settings/tokens) with `read:packages` scope and run:
+> ```bash
+> npm login --registry=https://npm.pkg.github.com
+> ```
 
 ### Option C: Standalone Installation
 
@@ -251,7 +259,7 @@ The `templates/orchestrate.sh` provides a project wrapper that:
 
 ```bash
 # Copy and customize
-cp node_modules/@solidkey/firebase-devops-toolkit/templates/orchestrate.sh ./scripts/
+cp node_modules/@solidkeyab/firebase-devops-toolkit/templates/orchestrate.sh ./scripts/
 
 # Your custom commands
 ./scripts/orchestrate.sh start-dev    # Your project-specific

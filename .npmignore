@@ -1,0 +1,30 @@
+# Git
+.git/
+.github/
+
+# Development
+.vscode/
+.idea/
+*.log
+*.swp
+*.swo
+
+# Emulator data
+emulator-data/
+firebase-export*/
+
+# Test & local development
+.env
+.env.*
+*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package files
+node_modules/
+package-lock.json
+
+# Documentation extras (keep main docs)
+CONTRIBUTING.md

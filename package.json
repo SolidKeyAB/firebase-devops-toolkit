@@ -1,6 +1,6 @@
 {
-  "name": "@solidkey/firebase-devops-toolkit",
-  "version": "1.0.0",
+  "name": "@solidkeyab/firebase-devops-toolkit",
+  "version": "0.1.0",
   "description": "Enterprise-grade Firebase DevOps toolkit - 80+ production-ready scripts for local development, deployment, and team collaboration",
   "main": "manage.sh",
   "scripts": {
@@ -32,6 +32,9 @@
     "url": "https://github.com/SolidKeyAB/firebase-devops-toolkit/issues"
   },
   "homepage": "https://github.com/SolidKeyAB/firebase-devops-toolkit#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "engines": {
     "node": ">=18.0.0"
   },

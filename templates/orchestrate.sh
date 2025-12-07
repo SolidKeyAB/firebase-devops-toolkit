@@ -5,7 +5,7 @@
 # =============================================================================
 #
 # This is a template for your project-specific orchestration script.
-# It wraps @solidkey/firebase-devops-toolkit and adds project-specific commands.
+# It wraps @solidkeyab/firebase-devops-toolkit and adds project-specific commands.
 #
 # USAGE:
 #   1. Copy this file to your project: cp orchestrate.sh your-project/scripts/
@@ -14,7 +14,11 @@
 #   4. Run: ./scripts/orchestrate.sh [command]
 #
 # INSTALLATION METHODS (choose one):
-#   npm install @solidkey/firebase-devops-toolkit --save-dev
+#   # Via GitHub Packages:
+#   echo "@solidkeyab:registry=https://npm.pkg.github.com" >> .npmrc
+#   npm install @solidkeyab/firebase-devops-toolkit --save-dev
+#
+#   # Via Git:
 #   git submodule add https://github.com/SolidKeyAB/firebase-devops-toolkit.git
 #   export FIREBASE_DEVOPS_DIR=/path/to/firebase-devops-toolkit
 #
@@ -56,8 +60,8 @@ find_firebase_devops() {
         return 0
     fi
 
-    # 2. npm package (recommended for most projects)
-    local npm_path="$PROJECT_ROOT/node_modules/@solidkey/firebase-devops-toolkit"
+    # 2. npm package via GitHub Packages (recommended for most projects)
+    local npm_path="$PROJECT_ROOT/node_modules/@solidkeyab/firebase-devops-toolkit"
     if [ -f "$npm_path/manage.sh" ]; then
         echo "$npm_path"
         return 0
@@ -111,11 +115,12 @@ if [ -z "$FIREBASE_DEVOPS" ]; then
     echo ""
     echo "Install using one of these methods:"
     echo ""
-    echo "  # Option 1: npm (recommended)"
-    echo "  npm install @solidkey/firebase-devops-toolkit --save-dev"
+    echo "  # Option 1: GitHub Packages (recommended)"
+    echo "  echo '@solidkeyab:registry=https://npm.pkg.github.com' >> .npmrc"
+    echo "  npm install @solidkeyab/firebase-devops-toolkit --save-dev"
     echo ""
-    echo "  # Option 2: Git submodule"
-    echo "  git submodule add https://github.com/SolidKeyAB/firebase-devops-toolkit.git"
+    echo "  # Option 2: Git clone"
+    echo "  git clone https://github.com/SolidKeyAB/firebase-devops-toolkit.git"
     echo ""
     echo "  # Option 3: Environment variable"
     echo "  export FIREBASE_DEVOPS_DIR=/path/to/firebase-devops-toolkit"
