@@ -4,13 +4,14 @@
 # This script creates the required Pub/Sub topics that the orchestrator service needs
 
 # Source configuration
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Use LOCAL_SCRIPT_DIR to avoid overwriting parent's SCRIPT_DIR when sourced
+LOCAL_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Try to source project-specific config first, fall back to generic config
-if [ -f "$SCRIPT_DIR/../project-config.sh" ]; then
-    source "$SCRIPT_DIR/../project-config.sh"
+if [ -f "$LOCAL_SCRIPT_DIR/../project-config.sh" ]; then
+    source "$LOCAL_SCRIPT_DIR/../project-config.sh"
 else
-    source "$SCRIPT_DIR/../config.sh"
+    source "$LOCAL_SCRIPT_DIR/../config.sh"
 fi
 
 # Function to log messages

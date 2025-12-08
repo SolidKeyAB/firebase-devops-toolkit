@@ -1,6 +1,6 @@
 {
   "name": "@solidkeyab/firebase-devops-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Enterprise-grade Firebase DevOps toolkit - 80+ production-ready scripts for local development, deployment, and team collaboration",
   "main": "manage.sh",
   "scripts": {
